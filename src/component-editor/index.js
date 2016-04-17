@@ -3,14 +3,20 @@ import Radium from 'radium';
 
 import editors from './prop-editors';
 
+const { PropTypes } = React;
+
+
+function isType(type, typeName) {
+  return type.typeName === typeName;
+}
+
 
 function getPropEditor(component, propName) {
   const type = component.constructor.propTypes[propName];
-  const { PropTypes } = React;
-  if (type === PropTypes.string || type === PropTypes.string.isRequired) {
+  if (isType(type, 'string')) {
     return editors.StringEditor;
   }
-  if ((type === PropTypes.object || type === PropTypes.object.isRequired) && propName === 'style') {
+  if (isType(type, 'style')) {
     return editors.StyleEditor;
   }
   return null;
