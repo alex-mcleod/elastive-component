@@ -7,23 +7,11 @@ import { StandardComponentEditor } from './component-editor';
 
 const BaseElastiveMixin = {
 
-  propTypes: {
-    startEditing: React.PropTypes.func.isRequired
-  },
-
   elastiveMeta: {
     editor: StandardComponentEditor,
     preview: null
-  },
-
-  componentWillMount() {
-    this.startEditing = this.startEditing.bind(this);
-  },
-
-  startEditing(evt) {
-    evt.stopPropagation();
-    this.props.startEditing(this);
   }
+
 };
 
 
