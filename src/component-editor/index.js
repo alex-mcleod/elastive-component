@@ -29,7 +29,8 @@ export class StandardComponentEditor extends React.Component {
   static propTypes = {
     updateProp: React.PropTypes.func.isRequired,
     deleteComponent: React.PropTypes.func.isRequired,
-    component: React.PropTypes.object
+    component: React.PropTypes.object.isRequired,
+    editableProps: React.PropTypes.array.isRequired
   }
 
   static styles = {
@@ -73,8 +74,7 @@ export class StandardComponentEditor extends React.Component {
 
   render() {
     const { component } = this.props;
-    if (!component) return null;
-    const editable = component.constructor.elastiveMeta.editableProps;
+    const editable = this.props.editableProps;
     return (
       <div style={StandardComponentEditor.styles.container}>
         {editable.map(this.renderEditableProp)}

@@ -6,4 +6,4 @@ export { BasicPreview } from './preview';
 
 export { Types } from './types';
 
-export { exportComponent } from './export';
+export { exportLibrary } from './export';
