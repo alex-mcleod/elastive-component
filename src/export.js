@@ -1,11 +1,7 @@
 import _ from 'lodash';
 
-import { StandardComponentEditor } from './component-editor';
 
-
-const componentDefaults = {
-  editor: StandardComponentEditor
-};
+const componentDefaults = {};
 
 
 export function exportLibrary(libInfo) {
